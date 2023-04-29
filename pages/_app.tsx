@@ -63,9 +63,14 @@ export default function MyApp({ Component, emotionCache = clientSideEmotionCache
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-      <title>FetchGPT - Chat GPT-4</title>
+      <title>FetchGPT - Open Source Chat-GPT App</title>
+
 
         <meta name='viewport' content='initial-scale=1, width=device-width' />
+        <meta name='description' 
+        content='Discover the power of open source chat with our GPT app featuring GPT-4 integration. Engage your audience with intelligent and natural conversations, powered by the latest advancements in AI technology. Experience the future of chatbots today.'/>
+                <link rel="shortcut icon" href="https://pbs.twimg.com/profile_images/1652308062202658816/pUGzlhNm_400x400.jpg" />
+
       </Head>
       <CssVarsProvider defaultMode='dark' theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}

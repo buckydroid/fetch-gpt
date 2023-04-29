@@ -49,7 +49,7 @@ function MyDocument({ emotionStyleTags  }) {
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("link", {
                         rel: "shortcut icon",
-                        href: "/favicon.ico"
+                        href: "https://pbs.twimg.com/profile_images/1652308062202658816/pUGzlhNm_400x400.jpg"
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("meta", {
                         name: "emotion-insertion-point",

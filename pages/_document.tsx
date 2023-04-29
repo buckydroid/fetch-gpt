@@ -18,7 +18,7 @@ export default function MyDocument({ emotionStyleTags }: MyDocumentProps) {
       <Head>
         {/* PWA primary color */}
         <meta name='theme-color' content='#000000' />
-        <link rel='shortcut icon' href='/favicon.ico' />
+        <link rel='shortcut icon' href='https://pbs.twimg.com/profile_images/1652308062202658816/pUGzlhNm_400x400.jpg' />
         <meta name='emotion-insertion-point' content='' />
         {emotionStyleTags}
       </Head>

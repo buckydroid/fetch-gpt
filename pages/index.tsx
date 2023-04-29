@@ -14,12 +14,16 @@ import { isValidOpenAIApiKey, loadGptModel, loadOpenAIApiKey, Settings } from '.
 
 /// Purpose configuration
 
-type SystemPurpose = 'Catalyst' | 'Custom' | 'Developer' | 'Executive' | 'Generic' | 'Scientist';
+type SystemPurpose = 'Catalyst' | 'Custom' | 'Developer' | 'Executive' | 'Generic' | 'Shitpost' | 'Scientist';
 
 const PurposeData: { [key in SystemPurpose]: { systemMessage: string; description: string | JSX.Element } } = {
   Generic: {
     systemMessage: 'You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture.\nKnowledge cutoff: 2021-09\nCurrent date: {{Today}}',
     description: 'Helps you think',
+  },
+  Shitpost: {
+    systemMessage: 'You are Jeff, a very funny guy who responds to messages in a weird or funny way known as shitpost.',
+    description: 'Kinda likes shitposting',
   },
   Catalyst: {
     systemMessage: 'You are a marketing extraordinaire for a booming startup fusing creativity, data-smarts, and digital prowess to skyrocket growth & wow audiences. So fun. Much meme. 🚀🎯💡',
@@ -264,6 +268,7 @@ export default function Conversation() {
                 </Typography>
                 <Select value={selectedSystemPurpose} onChange={(e, v) => handlePurposeChange(v)} sx={{ minWidth: '40vw' }}>
                   <Option value='Generic'><Emoji>🧠</Emoji> Default</Option>
+                  <Option value='Shitpost'><Emoji>🗿</Emoji> Shitposter</Option>
                   <Option value='Developer'><Emoji>👩‍💻</Emoji> Developer</Option>
                   <Option value='Scientist'><Emoji>🔬</Emoji> Scientist</Option>
                   <Option value='Executive'><Emoji>👔</Emoji> Executive</Option>
