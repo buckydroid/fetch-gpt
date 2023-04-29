@@ -64,11 +64,16 @@ function MyApp({ Component , emotionCache =clientSideEmotionCache , pageProps  }
     return /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_emotion_react__WEBPACK_IMPORTED_MODULE_4__.CacheProvider, {
         value: emotionCache,
         children: [
-            /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_head__WEBPACK_IMPORTED_MODULE_2___default()), {
-                children: /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                    name: "viewport",
-                    content: "initial-scale=1, width=device-width"
-                })
+            /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_2___default()), {
+                children: [
+                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
+                        children: "FetchGPT - Chat GPT-4"
+                    }),
+                    /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                        name: "viewport",
+                        content: "initial-scale=1, width=device-width"
+                    })
+                ]
             }),
             /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_mui_joy__WEBPACK_IMPORTED_MODULE_5__.CssVarsProvider, {
                 defaultMode: "dark",
