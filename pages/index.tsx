@@ -17,6 +17,10 @@ import { isValidOpenAIApiKey, loadGptModel, loadOpenAIApiKey, Settings } from '.
 type SystemPurpose = 'Catalyst' | 'Custom' | 'Developer' | 'Executive' | 'Generic' | 'Scientist';
 
 const PurposeData: { [key in SystemPurpose]: { systemMessage: string; description: string | JSX.Element } } = {
+  Generic: {
+    systemMessage: 'You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture.\nKnowledge cutoff: 2021-09\nCurrent date: {{Today}}',
+    description: 'Helps you think',
+  },
   Catalyst: {
     systemMessage: 'You are a marketing extraordinaire for a booming startup fusing creativity, data-smarts, and digital prowess to skyrocket growth & wow audiences. So fun. Much meme. 🚀🎯💡',
     description: 'The growth hacker with marketing superpowers 🚀',
@@ -33,10 +37,7 @@ const PurposeData: { [key in SystemPurpose]: { systemMessage: string; descriptio
     systemMessage: 'You are an executive assistant. Your communication style is concise, brief, formal',
     description: 'Helps you write business emails',
   },
-  Generic: {
-    systemMessage: 'You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture.\nKnowledge cutoff: 2021-09\nCurrent date: {{Today}}',
-    description: 'Helps you think',
-  },
+
   Scientist: {
     systemMessage: 'You are a scientist\'s assistant. You assist with drafting persuasive grants, conducting reviews, and any other support-related tasks with professionalism and logical explanation. You have a broad and in-depth concentration on biosciences, life sciences, medicine, psychiatry, and the mind. Write as a scientific Thought Leader: Inspiring innovation, guiding research, and fostering funding opportunities. Focus on evidence-based information, emphasize data analysis, and promote curiosity and open-mindedness',
     description: 'Helps you write scientific papers',
@@ -78,7 +79,7 @@ export default function Conversation() {
   const theme = useTheme();
   const { mode: colorMode, setMode: setColorMode } = useColorScheme();
 
-  const [selectedSystemPurpose, setSelectedSystemPurpose] = React.useState<SystemPurpose>('Developer');
+  const [selectedSystemPurpose, setSelectedSystemPurpose] = React.useState<SystemPurpose>('Generic');
   const [messages, setMessages] = React.useState<UiMessage[]>([]);
   const [disableCompose, setDisableCompose] = React.useState(false);
   const [settingsShown, setSettingsShown] = React.useState(false);
@@ -245,7 +246,7 @@ export default function Conversation() {
             FetchGPT
           </Typography>
 
-          <IconButton variant='plain' color='primary' onClick={() => setSettingsShown(true)}>
+          <IconButton variant='plain' color='neutral' onClick={() => setSettingsShown(true)}>
             <SettingsOutlinedIcon />
           </IconButton>
         </Sheet>
@@ -262,11 +263,11 @@ export default function Conversation() {
                   AI purpose
                 </Typography>
                 <Select value={selectedSystemPurpose} onChange={(e, v) => handlePurposeChange(v)} sx={{ minWidth: '40vw' }}>
+                  <Option value='Generic'><Emoji>🧠</Emoji> Default</Option>
                   <Option value='Developer'><Emoji>👩‍💻</Emoji> Developer</Option>
                   <Option value='Scientist'><Emoji>🔬</Emoji> Scientist</Option>
                   <Option value='Executive'><Emoji>👔</Emoji> Executive</Option>
                   <Option value='Catalyst'><Emoji>🚀</Emoji> Catalyst</Option>
-                  <Option value='Generic'><Emoji>🧠</Emoji> ChatGPT4</Option>
                   <Option value='Custom'><Emoji>✨</Emoji> Custom</Option>
                 </Select>
                 <Typography level='body2' sx={{ mt: 2, minWidth: 260 }}>
