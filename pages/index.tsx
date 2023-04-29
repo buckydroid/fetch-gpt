@@ -245,7 +245,7 @@ export default function Conversation() {
             FetchGPT
           </Typography>
 
-          <IconButton variant='plain' color='neutral' onClick={() => setSettingsShown(true)}>
+          <IconButton variant='plain' color='primary' onClick={() => setSettingsShown(true)}>
             <SettingsOutlinedIcon />
           </IconButton>
         </Sheet>
