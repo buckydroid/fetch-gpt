@@ -65,7 +65,7 @@ export default function MyApp({ Component, emotionCache = clientSideEmotionCache
       <Head>
         <meta name='viewport' content='initial-scale=1, width=device-width' />
       </Head>
-      <CssVarsProvider defaultMode='light' theme={theme}>
+      <CssVarsProvider defaultMode='dark' theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Component {...pageProps} />

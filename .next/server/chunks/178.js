@@ -71,7 +71,7 @@ function MyApp({ Component , emotionCache =clientSideEmotionCache , pageProps  }
                 })
             }),
             /*#__PURE__*/ (0,_emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_mui_joy__WEBPACK_IMPORTED_MODULE_5__.CssVarsProvider, {
-                defaultMode: "light",
+                defaultMode: "dark",
                 theme: theme,
                 children: [
                     /*#__PURE__*/ _emotion_react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_mui_joy__WEBPACK_IMPORTED_MODULE_5__.CssBaseline, {}),

@@ -90,13 +90,15 @@ export default function Conversation() {
 
   React.useEffect(() => {
     // show the settings at startup if the API key is not present
+    setColorMode('dark')
     if (!isValidOpenAIApiKey(loadOpenAIApiKey()))
       setSettingsShown(true);
   }, []);
 
-  const handleDarkModeToggle = () => setColorMode(colorMode === 'dark' ? 'light' : 'dark');
+  const handleDarkModeToggle = () => setColorMode(colorMode === 'dark' ? 'dark' : 'dark');
 
-
+  // setColorMode('dark')
+  handleDarkModeToggle();
   const handleListClear = () => setMessages([]);
 
   const handleListDelete = (uid: string) =>
@@ -201,14 +203,14 @@ export default function Conversation() {
   const listEmpty = !messages.length;
 
   const Emoji = (props: any) => null;
-
+  setColorMode(colorMode === 'dark' ? 'dark' : 'dark')
   return (
     <Container maxWidth='xl' disableGutters sx={{
       boxShadow: theme.vars.shadow.lg,
     }}>
       <Stack direction='column' sx={{
         minHeight: '100vh',
-        
+
       }}>
 
         {/* Application Bar */}
@@ -217,10 +219,10 @@ export default function Conversation() {
           // background: theme.vars.palette.primary.solidHoverBg,
           display: 'flex', flexDirection: 'row',
           // justifyContent:"start",
-          alignItems:"start",
-          justifyContent:"space-between",
-          backgroundColor:"black",
-          paddingX:2,
+          alignItems: "start",
+          justifyContent: "space-between",
+          backgroundColor: "black",
+          paddingX: 2,
 
         }}>
           {/* <IconButton variant='plain' color='neutral' onClick={handleDarkModeToggle}>
@@ -238,7 +240,7 @@ export default function Conversation() {
             fontSize: '1.5rem', lineHeight: 1.75,
             my: 'auto',
             // flexGrow: 1,
-            fontWeight:600,
+            fontWeight: 600,
           }} onDoubleClick={handleListClear}>
             FetchGPT
           </Typography>
@@ -277,9 +279,9 @@ export default function Conversation() {
               <List sx={{ p: 0 }}>
                 {messages.map((message, index) =>
                   <ChatMessage key={'msg-' + message.uid} uiMessage={message}
-                               onDelete={() => handleListDelete(message.uid)}
-                               onEdit={newText => handleListEdit(message.uid, newText)}
-                               onRunAgain={() => handleListRunAgain(message.uid)} />)}
+                    onDelete={() => handleListDelete(message.uid)}
+                    onEdit={newText => handleListEdit(message.uid, newText)}
+                    onRunAgain={() => handleListRunAgain(message.uid)} />)}
                 <div ref={messagesEndRef}></div>
               </List>
             </>

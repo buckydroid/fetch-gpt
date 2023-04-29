@@ -279,7 +279,7 @@ export function ChatMessage(props: { uiMessage: UiMessage, onDelete: () => void,
           </Tooltip>
         )} */}
 
-        {/* message operations menu (floating) */}
+        {/* messagea operations menu (floating) */}
         {!!menuAnchor && (
           <Menu open anchorEl={menuAnchor} onClose={closeMenu} sx={{ minWidth: 200 }}>
             <MenuItem onClick={handleMenuCopy}>
